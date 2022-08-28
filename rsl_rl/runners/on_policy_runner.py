@@ -168,6 +168,7 @@ class OnPolicyRunner:
         self.writer.add_scalar('Loss/learning_rate', self.alg.learning_rate, locs['it'])
         self.writer.add_scalar('Policy/mean_noise_std', mean_std.item(), locs['it'])
         self.writer.add_scalar('Perf/total_fps', fps, locs['it'])
+        self.writer.add_scalar('Perf/total_fps/timestep', fps, self.tot_timesteps)
         self.writer.add_scalar('Perf/collection time', locs['collection_time'], locs['it'])
         self.writer.add_scalar('Perf/learning_time', locs['learn_time'], locs['it'])
         if len(locs['rewbuffer']) > 0:
